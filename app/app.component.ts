@@ -7,6 +7,6 @@ import { GithubService } from './services/github.service';
   providers: [GithubService],
 })
 export class AppComponent  {
-  brand: 'Github Browser';
-  brandUrl: 'http://temilajumoke.com';
+  brand= 'Github Browser';
+  brandUrl = 'http://temilajumoke.com';
  }

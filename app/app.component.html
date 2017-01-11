@@ -1,15 +1,13 @@
 <nav class="navbar navbar-dark bg-primary">
 <a class="navbar-brand" href="{{brandUrl}}">
     <img src="http://temilajumoke.com/images/temilajfavicon.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-    {{brand}} brand
+    {{brand}}
   </a>
   <div class="nav navbar-nav">
-    <a class="nav-item nav-link active">Home <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link">About</a>
+    <a class="nav-item nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" routerLink="about">About</a>
   </div>
 </nav>
 <div class="container m-t-20">
-    <profile></profile>
+    <router-outlet></router-outlet>
 </div>
-<p>{{brand}}</p>
-{{brand}}
