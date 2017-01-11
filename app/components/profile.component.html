@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter github username.." [(ngModel)]="username" name="username" (keyup)="searchUser()">
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="user">
+    <div class="card col-sm-4">
+        <div class="card-block">
+            <h4 class="card-title">{{user.name}} (@{{user.login}})</h4>
+            <h6 class="card-subtitle text-muted">{{user.blog}}</h6>
+        </div>
+        <img class="card-img-top img-responsive img" src="{{user.avatar_url}}" alt="Card image cap">
+        <div class="card-block">
+            <div class="github-stats">
+                <span class="tag tag-success">Repositories: {{user.public_repos}}</span>
+                <span class="tag tag-info">gists: {{user.public_gists}}</span>
+                <span class="tag tag-primary">Followers: {{user.followers}}</span>
+                <span class="tag tag-primary">Following: {{user.following}}</span>
+            </div>
+            <span class=""><i class="fa fa-location"></i>{{user.location}}</span>
+            <span class="pull-right">member since:<i class="fa fa-location"></i>{{user.created_at}}</span>
+            <p class="card-text">{{user.bio}}</p>
+            <a href="{{user.html_url}}" target="_blank" class="btn btn-primary">View on Github</a>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{user.email}}</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-block">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="repos" class="col-sm-8">
+    <div *ngFor="let repo of repos" >
+        <div class="">
+            <div class="card card-block">
+                <div class="col-sm-9">
+                    <h4 class="card-title">{{repo.name}}</h4>
+                    <h6>{{repo.full_name}}</h6>
+                    <p class="card-text">{{repo.description}}</p>
+                    <div class="github-stats">
+                        <span class="tag tag-success">{{repo.language}}</span>
+                        <span class="tag tag-primary">{{repo.forks_count}} forks</span>
+                        <span class="tag tag-warning">{{repo.stargazers_count}} stars</span>
+                        <span class="tag tag-warning">{{repo.watchers}} watchers</span>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{repo.html_url}}" target="_blank" class="btn btn-primary btn-sm">View on Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
